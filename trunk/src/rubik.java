@@ -373,10 +373,102 @@ public class rubik {
 			this.transpose(top, false);
 		}
 		else if (command.equals("D")) {
+			// This sequence is written backwards. The argument for clockwise roll should be reversed
 			System.out.println("Turn bottom face CW");
+			switch (front) {
+			case 0: 
+				switch(top) {
+				case 1: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,false); break;
+				case 2: this.roll(front,0,1,2,left,2,5,8,back,8,7,6,right,6,3,0,false); break;
+				case 3: this.roll(front,6,3,0,left,2,5,8,back,6,3,0,right,6,3,0,false); break;
+				case 4: this.roll(front,8,7,6,left,2,5,8,back,0,1,2,right,6,3,0,false); break;
+				} break;
+			case 1:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,false); break;
+				case 2: this.roll(front,6,3,0,left,0,1,2,back,2,5,8,right,8,7,6,false); break;
+				case 4: this.roll(front,2,5,8,left,0,1,2,back,6,3,0,right,8,7,6,false); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,false); break;
+				} break;
+			case 2:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,false); break;
+				case 1: this.roll(front,2,5,8,left,2,5,8,back,6,3,0,right,2,5,8,false); break;
+				case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,false); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,false); break;
+				} break;
+			case 3: 
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,false); break;
+				case 2: this.roll(front,2,5,8,left,8,7,6,back,6,3,0,right,0,1,2,false); break;
+				case 4: this.roll(front,6,3,0,left,8,7,6,back,2,5,8,right,0,1,2,false); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,false); break;
+				} break;
+			case 4:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,false); break;
+				case 1: this.roll(front,6,3,0,left,2,5,8,back,2,5,8,right,2,5,8,false); break;
+				case 3: this.roll(front,2,5,8,left,6,3,0,back,6,3,0,right,6,3,0,false); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,false); break;
+				}
+			case 5:
+				switch(top) {
+				case 1: this.roll(front,2,5,8,left,6,3,0,back,2,5,8,right,2,5,8,false); break;
+				case 2: this.roll(front,8,7,6,left,6,3,0,back,0,1,2,right,2,5,8,false); break;
+				case 3: this.roll(front,6,3,0,left,6,3,0,back,6,3,0,right,2,5,8,false); break;
+				case 4: this.roll(front,0,1,2,left,6,3,0,back,8,7,6,right,2,5,8,false); break;
+				}
+			}
+			this.transpose(down, true);
 		}
 		else if (command.equals("D'")) {
+			// This sequence is written backwards. The argument for clockwise roll should be reversed
 			System.out.println("Turn bottom face CCW");
+			switch (front) {
+			case 0: 
+				switch(top) {
+				case 1: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,true); break;
+				case 2: this.roll(front,0,1,2,left,2,5,8,back,8,7,6,right,6,3,0,true); break;
+				case 3: this.roll(front,6,3,0,left,2,5,8,back,6,3,0,right,6,3,0,true); break;
+				case 4: this.roll(front,8,7,6,left,2,5,8,back,0,1,2,right,6,3,0,true); break;
+				} break;
+			case 1:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,true); break;
+				case 2: this.roll(front,6,3,0,left,0,1,2,back,2,5,8,right,8,7,6,true); break;
+				case 4: this.roll(front,2,5,8,left,0,1,2,back,6,3,0,right,8,7,6,true); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,true); break;
+				} break;
+			case 2:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,true); break;
+				case 1: this.roll(front,2,5,8,left,2,5,8,back,6,3,0,right,2,5,8,true); break;
+				case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,true); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,true); break;
+				} break;
+			case 3: 
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,true); break;
+				case 2: this.roll(front,2,5,8,left,8,7,6,back,6,3,0,right,0,1,2,true); break;
+				case 4: this.roll(front,6,3,0,left,8,7,6,back,2,5,8,right,0,1,2,true); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,true); break;
+				} break;
+			case 4:
+				switch(top) {
+				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,true); break;
+				case 1: this.roll(front,6,3,0,left,2,5,8,back,2,5,8,right,2,5,8,true); break;
+				case 3: this.roll(front,2,5,8,left,6,3,0,back,6,3,0,right,6,3,0,true); break;
+				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,true); break;
+				}
+			case 5:
+				switch(top) {
+				case 1: this.roll(front,2,5,8,left,6,3,0,back,2,5,8,right,2,5,8,true); break;
+				case 2: this.roll(front,8,7,6,left,6,3,0,back,0,1,2,right,2,5,8,true); break;
+				case 3: this.roll(front,6,3,0,left,6,3,0,back,6,3,0,right,2,5,8,true); break;
+				case 4: this.roll(front,0,1,2,left,6,3,0,back,8,7,6,right,2,5,8,true); break;
+				}
+			}
+			this.transpose(down, false);
 		}
 		else if (command.equals("F")) {
 			System.out.println("Turn front face CW");
@@ -454,21 +546,267 @@ public class rubik {
 		}
 		else if (command.equals("B")) {
 			System.out.println("Turn back face CW");
+			switch (front) {
+			case 0: this.roll(top,6,7,8,left,6,7,8,down,6,7,8,right,6,7,8,true); break;
+			case 1: 
+				switch (top) {
+				case 0: this.roll(top,8,5,2,left,0,3,6,down,8,5,2,right,8,5,2,true); break;
+				case 2: this.roll(top,8,5,2,left,8,5,2,down,0,3,6,right,8,5,2,true); break;
+				case 4: this.roll(top,0,3,6,left,8,5,2,down,8,5,2,right,8,5,2,true); break;
+				case 5: this.roll(top,8,5,2,left,0,3,6,down,8,5,2,right,8,5,2,true); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,2,1,0,left,0,3,6,down,6,7,8,right,8,5,2,true); break;
+				case 1: this.roll(top,0,3,6,left,6,7,8,down,8,5,2,right,2,1,0,true); break;
+				case 3: this.roll(top,8,5,2,left,2,1,0,down,0,3,6,right,6,7,8,true); break;
+				case 5: this.roll(top,6,7,8,left,8,5,2,down,2,1,0,right,0,3,6,true); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,0,3,6,left,0,3,6,down,0,3,6,right,8,5,2,true); break;
+				case 2: this.roll(top,0,3,6,left,0,3,6,down,8,5,2,right,0,3,6,true); break;
+				case 4: this.roll(top,8,5,2,left,0,3,6,down,0,3,6,right,0,3,6,true); break;
+				case 5: this.roll(top,0,3,6,left,8,5,2,down,0,3,6,right,0,3,6,true); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,6,7,8,left,0,3,6,down,2,1,0,right,8,5,2,true); break;
+				case 1: this.roll(top,8,5,2,left,6,7,8,down,0,3,6,right,2,1,0,true); break;
+				case 3: this.roll(top,0,3,6,left,2,1,0,down,8,5,2,right,6,7,8,true); break;
+				case 5: this.roll(top,2,1,0,left,8,5,2,down,6,7,8,right,0,3,6,true); break;
+				} break;
+			case 5: this.roll(top,2,1,0,left,2,1,0,down,2,1,0,right,2,1,0,true); break;
+			}
+			this.transpose(back, true);
 		}
 		else if (command.equals("B'")) {
 			System.out.println("Turn back face CCW");
+			switch (front) {
+			case 0: this.roll(top,6,7,8,left,6,7,8,down,6,7,8,right,6,7,8,false); break;
+			case 1: 
+				switch (top) {
+				case 0: this.roll(top,8,5,2,left,0,3,6,down,8,5,2,right,8,5,2,false); break;
+				case 2: this.roll(top,8,5,2,left,8,5,2,down,0,3,6,right,8,5,2,false); break;
+				case 4: this.roll(top,0,3,6,left,8,5,2,down,8,5,2,right,8,5,2,false); break;
+				case 5: this.roll(top,8,5,2,left,0,3,6,down,8,5,2,right,8,5,2,false); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,2,1,0,left,0,3,6,down,6,7,8,right,8,5,2,false); break;
+				case 1: this.roll(top,0,3,6,left,6,7,8,down,8,5,2,right,2,1,0,false); break;
+				case 3: this.roll(top,8,5,2,left,2,1,0,down,0,3,6,right,6,7,8,false); break;
+				case 5: this.roll(top,6,7,8,left,8,5,2,down,2,1,0,right,0,3,6,false); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,0,3,6,left,0,3,6,down,0,3,6,right,8,5,2,false); break;
+				case 2: this.roll(top,0,3,6,left,0,3,6,down,8,5,2,right,0,3,6,false); break;
+				case 4: this.roll(top,8,5,2,left,0,3,6,down,0,3,6,right,0,3,6,false); break;
+				case 5: this.roll(top,0,3,6,left,8,5,2,down,0,3,6,right,0,3,6,false); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,6,7,8,left,0,3,6,down,2,1,0,right,8,5,2,false); break;
+				case 1: this.roll(top,8,5,2,left,6,7,8,down,0,3,6,right,2,1,0,false); break;
+				case 3: this.roll(top,0,3,6,left,2,1,0,down,8,5,2,right,6,7,8,false); break;
+				case 5: this.roll(top,2,1,0,left,8,5,2,down,6,7,8,right,0,3,6,false); break;
+				} break;
+			case 5: this.roll(top,2,1,0,left,2,1,0,down,2,1,0,right,2,1,0,false); break;
+			}
+			this.transpose(back, false);
 		}
 		else if (command.equals("R")) {
 			System.out.println("Turn right face CW");
+			switch (front) {
+			case 0:
+				switch (top) {
+				case 1: this.roll(top,0,3,6,back,6,7,8,down,8,5,2,front,2,1,0,true); break;
+				case 2: this.roll(top,0,3,6,back,0,3,6,down,8,5,2,front,0,3,6,true); break;
+				case 3: this.roll(top,0,3,6,back,2,1,0,down,8,5,2,front,6,7,8,true); break;
+				case 4: this.roll(top,0,3,6,back,8,5,2,down,8,5,2,front,8,5,2,true); break;
+				} break;
+			case 1:
+				switch (top) {
+				case 0: this.roll(top,6,7,8,back,0,3,6,down,2,1,0,front,8,5,2,true); break;
+				case 2: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,true); break;
+				case 4: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,true); break;
+				case 5: this.roll(top,6,7,8,back,8,5,2,down,2,1,0,front,0,3,6,true); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,8,5,2,back,0,3,6,down,8,5,2,front,8,5,2,true); break;
+				case 1: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,true); break;
+				case 3: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,true); break;
+				case 5: this.roll(top,0,3,6,back,8,5,2,down,0,3,6,front,0,3,6,true); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,2,1,0,back,0,3,6,down,6,7,8,front,8,5,2,true); break;
+				case 2: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,true); break;
+				case 4: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,true); break;
+				case 5: this.roll(top,2,1,0,back,8,5,2,down,6,7,8,front,0,3,6,true); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,0,3,6,back,0,3,6,down,0,3,6,front,8,5,2,true); break;
+				case 1: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,true); break;
+				case 3: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,true); break;
+				case 5: this.roll(top,8,5,2,back,8,5,2,down,8,5,2,front,0,3,6,true); break;
+				} break;
+			case 5:
+				switch (top) {
+				case 1: this.roll(top,8,5,2,back,6,7,8,down,0,3,6,front,2,1,0,true); break;
+				case 2: this.roll(top,8,5,2,back,8,5,2,down,0,3,6,front,8,5,2,true); break;
+				case 3: this.roll(top,8,5,2,back,2,1,0,down,0,3,6,front,6,7,8,true); break;
+				case 4: this.roll(top,8,5,2,back,0,3,6,down,0,3,6,front,0,3,6,true); break;
+				} break;
+			}
+			this.transpose(right, true);
 		}
 		else if (command.equals("R'")) {
 			System.out.println("Turn right face CCW");
+			switch (front) {
+			case 0:
+				switch (top) {
+				case 1: this.roll(top,0,3,6,back,6,7,8,down,8,5,2,front,2,1,0,false); break;
+				case 2: this.roll(top,0,3,6,back,0,3,6,down,8,5,2,front,0,3,6,false); break;
+				case 3: this.roll(top,0,3,6,back,2,1,0,down,8,5,2,front,6,7,8,false); break;
+				case 4: this.roll(top,0,3,6,back,8,5,2,down,8,5,2,front,8,5,2,false); break;
+				} break;
+			case 1:
+				switch (top) {
+				case 0: this.roll(top,6,7,8,back,0,3,6,down,2,1,0,front,8,5,2,false); break;
+				case 2: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,false); break;
+				case 4: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,false); break;
+				case 5: this.roll(top,6,7,8,back,8,5,2,down,2,1,0,front,0,3,6,false); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,8,5,2,back,0,3,6,down,8,5,2,front,8,5,2,false); break;
+				case 1: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,false); break;
+				case 3: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,false); break;
+				case 5: this.roll(top,0,3,6,back,8,5,2,down,0,3,6,front,0,3,6,false); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,2,1,0,back,0,3,6,down,6,7,8,front,8,5,2,false); break;
+				case 2: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,false); break;
+				case 4: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,false); break;
+				case 5: this.roll(top,2,1,0,back,8,5,2,down,6,7,8,front,0,3,6,false); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,0,3,6,back,0,3,6,down,0,3,6,front,8,5,2,false); break;
+				case 1: this.roll(top,6,7,8,back,6,7,8,down,6,7,8,front,6,7,8,false); break;
+				case 3: this.roll(top,2,1,0,back,2,1,0,down,2,1,0,front,2,1,0,false); break;
+				case 5: this.roll(top,8,5,2,back,8,5,2,down,8,5,2,front,0,3,6,false); break;
+				} break;
+			case 5:
+				switch (top) {
+				case 1: this.roll(top,8,5,2,back,6,7,8,down,0,3,6,front,2,1,0,false); break;
+				case 2: this.roll(top,8,5,2,back,8,5,2,down,0,3,6,front,8,5,2,false); break;
+				case 3: this.roll(top,8,5,2,back,2,1,0,down,0,3,6,front,6,7,8,false); break;
+				case 4: this.roll(top,8,5,2,back,0,3,6,down,0,3,6,front,0,3,6,false); break;
+				} break;
+			}
+			this.transpose(right, false);
 		}
 		else if (command.equals("L")) {
 			System.out.println("Turn left face CW");
+			switch (front) {
+			case 0:
+				switch (top) {
+				case 1: this.roll(top,2,5,8,back,0,1,2,down,6,3,0,front,8,7,6,false); break;
+				case 2: this.roll(top,2,5,8,back,2,5,8,down,6,3,0,front,2,5,8,false); break;
+				case 3: this.roll(top,2,5,8,back,8,7,6,down,6,3,0,front,0,1,2,false); break;
+				case 4: this.roll(top,2,5,8,back,6,3,0,down,6,3,0,front,6,3,0,false); break;
+				} break;
+			case 1:
+				switch (top) {
+				case 0: this.roll(top,0,1,2,back,2,5,8,down,8,7,6,front,6,3,0,false); break;
+				case 2: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,false); break;
+				case 4: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,false); break;
+				case 5: this.roll(top,0,1,2,back,6,3,0,down,8,7,6,front,2,5,8,false); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,6,3,0,back,2,5,8,down,6,3,0,front,6,3,0,false); break;
+				case 1: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,false); break;
+				case 3: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,false); break;
+				case 5: this.roll(top,2,5,8,back,6,3,0,down,2,5,8,front,2,5,8,false); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,8,7,6,back,2,5,8,down,0,1,2,front,6,3,0,false); break;
+				case 2: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,false); break;
+				case 4: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,false); break;
+				case 5: this.roll(top,8,7,6,back,6,3,0,down,0,1,2,front,2,5,8,false); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,2,5,8,back,2,5,8,down,2,5,8,front,6,3,0,false); break;
+				case 1: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,false); break;
+				case 3: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,false); break;
+				case 5: this.roll(top,6,3,0,back,6,3,0,down,6,3,0,front,2,5,8,false); break;
+				} break;
+			case 5:
+				switch (top) {
+				case 1: this.roll(top,6,3,0,back,0,1,2,down,2,5,8,front,8,7,6,false); break;
+				case 2: this.roll(top,6,3,0,back,6,3,0,down,2,5,8,front,6,3,0,false); break;
+				case 3: this.roll(top,6,3,0,back,8,7,6,down,2,5,8,front,0,1,2,false); break;
+				case 4: this.roll(top,6,3,0,back,2,5,8,down,2,5,8,front,2,5,8,false); break;
+				} break;
+			}
+			this.transpose(left, true);
 		}
 		else if (command.equals("L'")) {
 			System.out.println("Turn left face CCW");
+			switch (front) {
+			case 0:
+				switch (top) {
+				case 1: this.roll(top,2,5,8,back,0,1,2,down,6,3,0,front,8,7,6,true); break;
+				case 2: this.roll(top,2,5,8,back,2,5,8,down,6,3,0,front,2,5,8,true); break;
+				case 3: this.roll(top,2,5,8,back,8,7,6,down,6,3,0,front,0,1,2,true); break;
+				case 4: this.roll(top,2,5,8,back,6,3,0,down,6,3,0,front,6,3,0,true); break;
+				} break;
+			case 1:
+				switch (top) {
+				case 0: this.roll(top,0,1,2,back,2,5,8,down,8,7,6,front,6,3,0,true); break;
+				case 2: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,true); break;
+				case 4: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,true); break;
+				case 5: this.roll(top,0,1,2,back,6,3,0,down,8,7,6,front,2,5,8,true); break;
+				} break;
+			case 2:
+				switch (top) {
+				case 0: this.roll(top,6,3,0,back,2,5,8,down,6,3,0,front,6,3,0,true); break;
+				case 1: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,true); break;
+				case 3: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,true); break;
+				case 5: this.roll(top,2,5,8,back,6,3,0,down,2,5,8,front,2,5,8,true); break;
+				} break;
+			case 3:
+				switch (top) {
+				case 0: this.roll(top,8,7,6,back,2,5,8,down,0,1,2,front,6,3,0,true); break;
+				case 2: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,true); break;
+				case 4: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,true); break;
+				case 5: this.roll(top,8,7,6,back,6,3,0,down,0,1,2,front,2,5,8,true); break;
+				} break;
+			case 4:
+				switch (top) {
+				case 0: this.roll(top,2,5,8,back,2,5,8,down,2,5,8,front,6,3,0,true); break;
+				case 1: this.roll(top,0,1,2,back,0,1,2,down,0,1,2,front,0,1,2,true); break;
+				case 3: this.roll(top,8,7,6,back,8,7,6,down,8,7,6,front,8,7,6,true); break;
+				case 5: this.roll(top,6,3,0,back,6,3,0,down,6,3,0,front,2,5,8,true); break;
+				} break;
+			case 5:
+				switch (top) {
+				case 1: this.roll(top,6,3,0,back,0,1,2,down,2,5,8,front,8,7,6,true); break;
+				case 2: this.roll(top,6,3,0,back,6,3,0,down,2,5,8,front,6,3,0,true); break;
+				case 3: this.roll(top,6,3,0,back,8,7,6,down,2,5,8,front,0,1,2,true); break;
+				case 4: this.roll(top,6,3,0,back,2,5,8,down,2,5,8,front,2,5,8,true); break;
+				} break;
+			}
+			this.transpose(left, false);
 		}
 		
 		else if (command.equals("RESET")) {
