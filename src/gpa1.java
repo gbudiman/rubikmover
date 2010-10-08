@@ -6,8 +6,32 @@ public class gpa1 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String text;
+			File file = new File(args[0]);
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			
+			rubik cube = new rubik();
+			while ((text = br.readLine()) != null) {
+				if (text.trim().length() == 54) {
+					cube.setState(text);
+				}
+				else {
+					cube.process(text);
+				}
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		/*try {
+			File file = new File(args[0]);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		BufferedReader br = new BufferedReader(new FileReader(file));
 		String commandIn;
 		rubik cube;
 		boolean debugMode;
@@ -45,7 +69,7 @@ public class gpa1 {
 			// TODO Auto-generated catch block
 			System.out.println("Block failure");
 			e.printStackTrace();
-		}
+		}*/
 		
 	}
 
