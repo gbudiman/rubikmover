@@ -114,7 +114,7 @@ public class rubik {
 				stringPointer++;
 			}
 		}
-		this.display(false);
+		//this.display(false);
 	}
 	
 	public int[] cArray(int i0, int i1, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
@@ -835,6 +835,9 @@ public class rubik {
 		
 		else if (command.equals("RESET")) {
 			this.reset();
+		}
+		else if (command.equals("OUTPUT")) {
+			this.display(false);
 		}
 		/*
 		 * Unrecognized command
