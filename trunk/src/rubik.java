@@ -80,18 +80,41 @@ public class rubik {
 	public void transpose(int face, boolean clockwise) {
 		if (clockwise) {
 			String temp = cube[face][0];
+			String temp2 = cube[face][1];
 			cube[face][0] = cube[face][6];
 			cube[face][6] = cube[face][8];
 			cube[face][8] = cube[face][2];
 			cube[face][2] = temp;
+			
+			cube[face][1] = cube[face][3];
+			cube[face][3] = cube[face][7];
+			cube[face][7] = cube[face][5];
+			cube[face][5] = temp2;
 		}
 		else {
 			String temp = cube[face][0];
+			String temp2 = cube[face][1];
 			cube[face][0] = cube[face][2];
 			cube[face][2] = cube[face][8];
 			cube[face][8] = cube[face][6];
 			cube[face][6] = temp;
+			
+			cube[face][1] = cube[face][5];
+			cube[face][5] = cube[face][7];
+			cube[face][7] = cube[face][3];
+			cube[face][3] = temp2;
 		}
+	}
+	
+	public void setState(String iState) {
+		int stringPointer = 0;
+		for (int face = 0; face < 6; face++) {
+			for (int i = 0; i < 9; i++) {
+				cube[face][i] = iState.substring(stringPointer, stringPointer+1);
+				stringPointer++;
+			}
+		}
+		this.display(false);
 	}
 	
 	public int[] cArray(int i0, int i1, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
@@ -223,7 +246,7 @@ public class rubik {
 		 */
 		// Affected: top, back, down, front;
 		if (command.equals("X")) {
-			System.out.println("Rotate along X axis CW");
+			//System.out.println("Rotate along X axis CW");
 			int temp = top;
 			top = front;
 			front = down;
@@ -231,7 +254,7 @@ public class rubik {
 			back = temp;
 		}
 		else if (command.equals("X'")) {
-			System.out.println("Rotate along X axis CCW");
+			//System.out.println("Rotate along X axis CCW");
 			int temp = top;
 			top = back;
 			back = down;
@@ -240,7 +263,7 @@ public class rubik {
 		}
 		// Affected: front, left, right, back;
 		else if (command.equals("Y")) {
-			System.out.println("Rotate along Y axis CW");
+			//System.out.println("Rotate along Y axis CW");
 			int temp = front;
 			front = right;
 			right = back;
@@ -248,7 +271,7 @@ public class rubik {
 			left = temp;
 		}
 		else if (command.equals("Y'")) {
-			System.out.println("Rotate along Y axis CCW");
+			//System.out.println("Rotate along Y axis CCW");
 			int temp = front;
 			front = left;
 			left = back;
@@ -257,7 +280,7 @@ public class rubik {
 		}
 		// Affected: top, left, right, down
 		else if (command.equals("Z")) {
-			System.out.println("Rotate along Z axis CW");
+			//System.out.println("Rotate along Z axis CW");
 			int temp = top;
 			top = left;
 			left = down;
@@ -265,7 +288,7 @@ public class rubik {
 			right = temp;
 		}
 		else if (command.equals("Z'")) {
-			System.out.println("Rotate along Z axis CCW");
+			//System.out.println("Rotate along Z axis CCW");
 			int temp = top;
 			top = right;
 			right = down;
@@ -277,7 +300,7 @@ public class rubik {
 		 * Modify cube
 		 */
 		else if (command.equals("U")) {
-			System.out.println("Turn top face CW");
+			//System.out.println("Turn top face CW");
 			switch (front) {
 			case 0: 
 				switch (top) {
@@ -325,7 +348,7 @@ public class rubik {
 			this.transpose(top, true);
 		}
 		else if (command.equals("U'")) {
-			System.out.println("Turn top face CCW");
+			//System.out.println("Turn top face CCW");
 			switch (front) {
 			case 0: 
 				switch (top) {
@@ -374,7 +397,7 @@ public class rubik {
 		}
 		else if (command.equals("D")) {
 			// This sequence is written backwards. The argument for clockwise roll should be reversed
-			System.out.println("Turn bottom face CW");
+			//System.out.println("Turn bottom face CW");
 			switch (front) {
 			case 0: 
 				switch(top) {
@@ -423,7 +446,7 @@ public class rubik {
 		}
 		else if (command.equals("D'")) {
 			// This sequence is written backwards. The argument for clockwise roll should be reversed
-			System.out.println("Turn bottom face CCW");
+			//System.out.println("Turn bottom face CCW");
 			switch (front) {
 			case 0: 
 				switch(top) {
@@ -471,7 +494,7 @@ public class rubik {
 			this.transpose(down, false);
 		}
 		else if (command.equals("F")) {
-			System.out.println("Turn front face CW");
+			//System.out.println("Turn front face CW");
 			switch (front) {
 			case 0: this.roll(top,2,1,0,right,2,1,0,down,2,1,0,left,2,1,0,true); break;
 			case 1:
@@ -508,7 +531,7 @@ public class rubik {
 			this.transpose(front, true);
 		}
 		else if (command.equals("F'")) {
-			System.out.println("Turn front face CCW");
+			//System.out.println("Turn front face CCW");
 			switch (front) {
 			case 0: this.roll(top,2,1,0,right,2,1,0,down,2,1,0,left,2,1,0,false); break;
 			case 1:
@@ -545,7 +568,7 @@ public class rubik {
 			this.transpose(front, false);
 		}
 		else if (command.equals("B")) {
-			System.out.println("Turn back face CW");
+			//System.out.println("Turn back face CW");
 			switch (front) {
 			case 0: this.roll(top,6,7,8,left,6,7,8,down,6,7,8,right,6,7,8,true); break;
 			case 1: 
@@ -581,7 +604,7 @@ public class rubik {
 			this.transpose(back, true);
 		}
 		else if (command.equals("B'")) {
-			System.out.println("Turn back face CCW");
+			//System.out.println("Turn back face CCW");
 			switch (front) {
 			case 0: this.roll(top,6,7,8,left,6,7,8,down,6,7,8,right,6,7,8,false); break;
 			case 1: 
@@ -617,7 +640,7 @@ public class rubik {
 			this.transpose(back, false);
 		}
 		else if (command.equals("R")) {
-			System.out.println("Turn right face CW");
+			//System.out.println("Turn right face CW");
 			switch (front) {
 			case 0:
 				switch (top) {
@@ -665,7 +688,7 @@ public class rubik {
 			this.transpose(right, true);
 		}
 		else if (command.equals("R'")) {
-			System.out.println("Turn right face CCW");
+			//System.out.println("Turn right face CCW");
 			switch (front) {
 			case 0:
 				switch (top) {
@@ -713,7 +736,8 @@ public class rubik {
 			this.transpose(right, false);
 		}
 		else if (command.equals("L")) {
-			System.out.println("Turn left face CW");
+			// This action is also written backwards.
+			//System.out.println("Turn left face CW");
 			switch (front) {
 			case 0:
 				switch (top) {
@@ -761,7 +785,7 @@ public class rubik {
 			this.transpose(left, true);
 		}
 		else if (command.equals("L'")) {
-			System.out.println("Turn left face CCW");
+			//System.out.println("Turn left face CCW");
 			switch (front) {
 			case 0:
 				switch (top) {
