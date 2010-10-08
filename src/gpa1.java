@@ -21,19 +21,22 @@ public class gpa1 {
 		
 		try {
 			commandIn = br.readLine();
-			if (commandIn.length() != 54) {
+			if (commandIn.trim().length() != 54) {
 				cube = new rubik();
 			}
 			else {
-				System.out.println("Predefined cube state is not yet implemented");
 				cube = new rubik();
+				cube.setState(commandIn);
+				commandIn = br.readLine();
 			}
 			
 			while (!commandIn.equals("OUTPUT")) {
 				cube.process(commandIn);
 				
-				cube.showOrientation();
-				cube.display(debugMode);
+				if (debugMode) {
+					cube.showOrientation();
+					cube.display(debugMode);
+				}
 				commandIn = br.readLine();
 			}
 			
