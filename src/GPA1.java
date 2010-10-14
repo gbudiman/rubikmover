@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class gpa1 {
+public class GPA1 {
 
 	/**
 	 * @param args
@@ -13,11 +13,13 @@ public class gpa1 {
 			
 			rubik cube = new rubik();
 			while ((text = br.readLine()) != null) {
-				if (text.trim().length() == 54) {
-					cube.setState(text);
-				}
-				else {
-					cube.process(text);
+				if (!text.substring(0, 1).equals("#")) {
+					if (text.trim().length() == 54) {
+						cube.setState(text);
+					}
+					else {
+						cube.process(text);
+					}
 				}
 			}
 		}
