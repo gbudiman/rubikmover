@@ -417,7 +417,8 @@ public class rubik {
 				switch(top) {
 				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,false); break;
 				case 1: this.roll(front,2,5,8,left,2,5,8,back,6,3,0,right,2,5,8,false); break;
-				case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,false); break;
+				//case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,false); break;
+				case 3: this.roll(front,6,3,0,left,6,3,0,back,2,5,8,right,6,3,0,false); break;
 				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,false); break;
 				} break;
 			case 3: 
@@ -466,7 +467,8 @@ public class rubik {
 				switch(top) {
 				case 0: this.roll(front,8,7,6,left,8,7,6,back,8,7,6,right,8,7,6,true); break;
 				case 1: this.roll(front,2,5,8,left,2,5,8,back,6,3,0,right,2,5,8,true); break;
-				case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,true); break;
+				//case 3: this.roll(front,2,5,8,left,2,5,8,back,2,5,8,right,6,3,0,true); break;
+				case 3: this.roll(front,6,3,0,left,6,3,0,back,2,5,8,right,6,3,0,true); break;
 				case 5: this.roll(front,0,1,2,left,0,1,2,back,0,1,2,right,0,1,2,true); break;
 				} break;
 			case 3: 
